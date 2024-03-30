@@ -1,9 +1,10 @@
 body {
-    background-color: black;
+    padding-top: 80px;
+    background-color: bisque;
     /* these properties will be inherited by childern elements*/
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(112, 69, 35);
 }
 
 
@@ -13,15 +14,26 @@ main{
     flex-wrap: wrap;
 }
 
+img {
+    display: block;
+    width: 10%;
+    height: 10%;
+    margin: auto;
+}
 
 header > h1{
     text-align: center;
     padding: 10px;
+    margin-left: 118px;
+    margin-right: 118px;
+    background-color: rgba(255 255, 255, .750);
+    border: 4px solid bisque;
+    border-radius: 4px;
 }
-
 
 /*applies to all sections*/
 section {
+    text-align: center;
     width: 400px;
     border: 4px solid #fff;
     border-radius: 8px;
@@ -30,29 +42,34 @@ section {
 
 
 section > h2 {
-    color: gray;
+    color: rgb(112, 69, 35);
     padding: 4px 8px;
 }
 
 
 section:first-of-type {
-    border: 4px solid gray;
+    border: 4px solid bisque;
+    background-color: rgba(255 255, 255, .750);
 }
 
 
 /* the id has a higher specificity, so it beats out the section selector*/
 #inprogress {
-    border: 4px solid red;
+    border: 4px solid bisque;
+    background-color: rgba(255 255, 255, .750);
 }
-
+ #inprogress h2 {
+    color: navy;
+ }
 
 #done {
-    border: 4px solid green;
+    border: 4px solid bisque;
+    background-color: rgba(255 255, 255, .750);
 }
 
 
 #done h2 {
-    color: green;
+    color: darkgreen;
 }
 
 
@@ -66,7 +83,9 @@ ul li {
     padding: 6px 8px;
     text-transform: uppercase;
 }
-
+li {
+    text-align: left;
+}
 
 .todo li:nth-child(odd){
     background-color: rgba(255, 255, 255, 0.2);
@@ -74,11 +93,26 @@ ul li {
 
 
 .inprogress li:nth-child(odd) {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 
 .done li:nth-child(odd) {
-    background-color: rgba(0, 255, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
+.video-bg {
+    object-fit: fill;
+    position: absolute;
+    width: 100%; 
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: -1;
+}
+
+input[type="checkbox"]:checked+span::after {
+    position: absolute;
+    content: "🎉";
+    font-size: large;
+}
